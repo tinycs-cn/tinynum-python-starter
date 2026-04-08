@@ -1,0 +1,4 @@
+# bootcraft.yml — 仓库元数据，平台导入时自动读取
+# ⚠️ 请勿修改或删除此文件 — 平台依赖它识别课程和语言，缺失将导致导入和评测失败
+course: tinynum
+language: python
