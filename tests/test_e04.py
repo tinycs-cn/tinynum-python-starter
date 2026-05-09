@@ -19,7 +19,7 @@ def emit(test_name: str, result: str) -> None:
 
 
 def shape_str(shape: tuple[int, ...]) -> str:
-    return ",".join(str(s) for s in shape)
+    return str(list(shape))
 
 
 def fmt(v: float) -> str:
@@ -72,17 +72,17 @@ def main() -> None:
     try:
         f = NDArray.from_array([0] * 24, 2, 3, 4)
         f.transpose()
-        emit("error_transpose_non2d", "NO_EXCEPTION")
+        emit("error_transpose_non2d", "NO_ERROR")
     except Exception:
-        emit("error_transpose_non2d", "EXCEPTION")
+        emit("error_transpose_non2d", "ERROR")
 
     # --- error: invalid axes ---
     try:
         g = NDArray.from_array([1, 2, 3, 4, 5, 6], 2, 3)
         g.transpose(0, 0)
-        emit("error_invalid_axes", "NO_EXCEPTION")
+        emit("error_invalid_axes", "NO_ERROR")
     except Exception:
-        emit("error_invalid_axes", "EXCEPTION")
+        emit("error_invalid_axes", "ERROR")
 
 
 if __name__ == "__main__":

@@ -19,7 +19,7 @@ def emit(test_name: str, result: str) -> None:
 
 
 def shape_str(shape: tuple[int, ...]) -> str:
-    return ",".join(str(s) for s in shape)
+    return str(list(shape))
 
 
 def main() -> None:
@@ -61,9 +61,9 @@ def main() -> None:
     # --- error: data/shape mismatch ---
     try:
         NDArray.from_array([1, 2, 3], 2, 2)
-        emit("error_mismatch", "NO_EXCEPTION")
+        emit("error_mismatch", "NO_ERROR")
     except (ValueError, Exception):
-        emit("error_mismatch", "EXCEPTION")
+        emit("error_mismatch", "ERROR")
 
 
 if __name__ == "__main__":

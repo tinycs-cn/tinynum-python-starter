@@ -19,7 +19,7 @@ def emit(test_name: str, result: str) -> None:
 
 
 def shape_str(shape: tuple[int, ...]) -> str:
-    return ",".join(str(s) for s in shape)
+    return str(list(shape))
 
 
 def fmt(v: float) -> str:
@@ -64,9 +64,26 @@ def main() -> None:
     # --- error: reshape size mismatch ---
     try:
         a.reshape(4, 4)
-        emit("error_reshape_size", "NO_EXCEPTION")
+        emit("error_reshape_size", "NO_ERROR")
     except (ValueError, Exception):
-        emit("error_reshape_size", "EXCEPTION")
+        emit("error_reshape_size", "ERROR")
+
+    # --- error: two -1 dimensions ---
+    try:
+        a.reshape(-1, -1)
+        emit("error_reshape_double_neg1", "NO_ERROR")
+    except (ValueError, Exception):
+        emit("error_reshape_double_neg1", "ERROR")
+
+    # --- reshape on non-contiguous (transposed) array ---
+    # original [[1,2,3],[4,5,6]], transposed = [[1,4],[2,5],[3,6]]
+    # flatten of transposed (shape [6]) = [1,4,2,5,3,6]
+    nc = NDArray.from_array([1, 2, 3, 4, 5, 6], 2, 3)
+    nc_t = nc.transpose()              # shape [3,2], non-contiguous
+    nc_r = nc_t.reshape(6)             # must deep-copy then reshape
+    emit("reshape_noncontiguous_toString", str(nc_r))
+    nc_r.set(99.0, 0)
+    emit("reshape_noncontiguous_copy", fmt(nc.get(0, 0)))  # original unchanged
 
 
 if __name__ == "__main__":

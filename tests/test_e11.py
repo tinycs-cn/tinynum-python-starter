@@ -72,5 +72,12 @@ def main() -> None:
     except Exception:
         emit("slice_range_error", "ERROR")
 
+    # --- error: negative step ---
+    try:
+        a.slice(Slice.of(0, 3, -1))
+        emit("error_step_neg", "NO_ERROR")
+    except Exception:
+        emit("error_step_neg", "ERROR")
+
 if __name__ == "__main__":
     main()

@@ -85,7 +85,7 @@ def main() -> None:
     at1 = NDArray.from_array([150.5, -200.3, 50.0, 0.7], 4)
     emit("astype_int8", str(at1.astype(DType.INT8)))
 
-    # ---- astype int8 -> float32 (identity on already-int-valued) ----
+    # ---- astype float32 -> float32 (identity) ----
     at2 = NDArray.from_array([127, -128, 50], 3)
     emit("astype_float32", str(at2.astype(DType.FLOAT32)))
 

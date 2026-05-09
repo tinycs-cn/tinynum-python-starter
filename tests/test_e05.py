@@ -79,6 +79,12 @@ def main() -> None:
     m = NDArray.from_array([1, 2, 3, 4, 5, 6], 2, 3)
     emit("unary_transposed", str(m.transpose().square()))
 
+    # --- non-zero sin / cos / tanh (catches always-zero / trivial implementations) ---
+    import math
+    emit("sin_half_pi", fmt(NDArray.from_array([math.pi / 2], 1).sin().get(0)))
+    emit("cos_pi",     fmt(NDArray.from_array([math.pi],     1).cos().get(0)))
+    emit("tanh_large", fmt(NDArray.from_array([100.0],       1).tanh().get(0)))
+
 
 if __name__ == "__main__":
     main()

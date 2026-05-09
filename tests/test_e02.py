@@ -57,9 +57,16 @@ def main() -> None:
     # --- error: wrong index count ---
     try:
         a.get(1)
-        emit("error_wrong_indices", "NO_EXCEPTION")
+        emit("error_wrong_indices", "NO_ERROR")
     except (ValueError, IndexError, Exception):
-        emit("error_wrong_indices", "EXCEPTION")
+        emit("error_wrong_indices", "ERROR")
+
+    # --- error: out-of-bounds index ---
+    try:
+        a.get(10, 0)
+        emit("error_out_of_bounds", "NO_ERROR")
+    except (ValueError, IndexError, Exception):
+        emit("error_out_of_bounds", "ERROR")
 
 
 if __name__ == "__main__":
