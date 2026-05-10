@@ -1,6 +1,6 @@
 """Supported data types for NDArray.
 
-The course uses FLOAT32 throughout. INT8 is introduced in E15
+The course uses FLOAT32 throughout. INT8 is introduced in S15
 to prepare for int8 quantization in tinytorch.
 """
 

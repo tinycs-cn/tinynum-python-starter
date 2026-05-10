@@ -1,4 +1,4 @@
-"""test_e01.py — E01 Storage & Shape test driver.
+"""test_e01.py — S01 Storage & Shape test driver.
 
 Provided by tinynum-starter. Do NOT modify.
 The tester runs this file to verify your NDArray implementation.

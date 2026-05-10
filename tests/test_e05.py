@@ -1,4 +1,4 @@
-"""test_e05.py — E05 Unary Math test driver.
+"""test_e05.py — S05 Unary Math test driver.
 
 Provided by tinynum-starter. Do NOT modify.
 The tester runs this file to verify your NDArray implementation.

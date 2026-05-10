@@ -1,4 +1,4 @@
-"""test_e07.py — E07 Broadcasting test driver.
+"""test_e07.py — S07 Broadcasting test driver.
 
 Provided by tinynum-starter. Do NOT modify.
 The tester runs this file to verify your NDArray implementation.

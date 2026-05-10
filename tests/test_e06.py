@@ -1,4 +1,4 @@
-"""test_e06.py — E06 Binary Ops & Comparisons test driver.
+"""test_e06.py — S06 Binary Ops & Comparisons test driver.
 
 Provided by tinynum-starter. Do NOT modify.
 The tester runs this file to verify your NDArray implementation.

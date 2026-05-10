@@ -1,4 +1,4 @@
-"""test_e04.py — E04 Transpose test driver.
+"""test_e04.py — S04 Transpose test driver.
 
 Provided by tinynum-starter. Do NOT modify.
 The tester runs this file to verify your NDArray implementation.

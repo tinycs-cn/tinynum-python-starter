@@ -1,4 +1,4 @@
-"""test_e02.py — E02 Strides & Indexing test driver.
+"""test_e02.py — S02 Strides & Indexing test driver.
 
 Provided by tinynum-starter. Do NOT modify.
 The tester runs this file to verify your NDArray implementation.

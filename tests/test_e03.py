@@ -1,4 +1,4 @@
-"""test_e03.py — E03 Reshape test driver.
+"""test_e03.py — S03 Reshape test driver.
 
 Provided by tinynum-starter. Do NOT modify.
 The tester runs this file to verify your NDArray implementation.
