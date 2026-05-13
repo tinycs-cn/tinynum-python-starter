@@ -28,6 +28,9 @@ class NDArray:
     def from_array(data: list[float], *shape: int) -> "NDArray":
         """从一维数据列表和指定 shape 创建 NDArray。
 
+        S01 只需初始化 data 和 shape；
+        strides 在 S02 中初始化，offset 默认为 0。
+
         Raises:
             ValueError: 若 len(data) 不等于 shape 各维之积
         """
