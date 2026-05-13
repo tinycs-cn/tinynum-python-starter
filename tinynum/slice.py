@@ -1,7 +1,7 @@
-"""Slice descriptor for NDArray indexing.
+"""NDArray 索引的切片描述器。
 
-Analogous to Python's built-in slice, but explicit for tinynum's
-NDArray.slice() method.
+类似 Python 内置 slice，但为 tinynum 的
+NDArray.slice() 方法显式设计。
 """
 
 from __future__ import annotations
@@ -11,7 +11,7 @@ import sys
 
 @dataclass(frozen=True)
 class Slice:
-    """Describes a slice range for one axis: [start, stop) with step."""
+    """描述单个轴的切片范围：[start, stop)，步长为 step。"""
 
     start: int
     stop: int
@@ -19,10 +19,10 @@ class Slice:
 
     @staticmethod
     def of(start: int, stop: int, step: int = 1) -> "Slice":
-        """Creates a slice [start, stop) with the given step."""
+        """创建指定步长的切片 [start, stop)。"""
         return Slice(start, stop, step)
 
     @staticmethod
     def all() -> "Slice":
-        """Selects all elements along the axis (equivalent to ':')."""
+        """选取整个轴（等价于 Python 的 ':'）。"""
         return Slice(0, sys.maxsize, 1)

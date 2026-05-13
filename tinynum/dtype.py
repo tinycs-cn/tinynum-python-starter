@@ -1,7 +1,7 @@
-"""Supported data types for NDArray.
+"""NDArray 支持的数据类型。
 
-The course uses FLOAT32 throughout. INT8 is introduced in S15
-to prepare for int8 quantization in tinytorch.
+课程全程使用 FLOAT32。INT8 在 S15 引入，
+为 tinytorch 的 int8 量化做准备。
 """
 
 from enum import Enum
