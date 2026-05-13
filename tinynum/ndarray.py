@@ -15,10 +15,10 @@ class NDArray:
     """一维连续存储 + shape/strides 元数据的 N 维数组。"""
 
     def __init__(self) -> None:
-        self.data: list[float] = []       # 一维连续存储
-        self.shape: tuple[int, ...] = ()  # 各维大小，如 (2, 3, 4)
-        self.strides: tuple[int, ...] = ()  # 各维步长，如 (12, 4, 1)（行优先）
-        self.offset: int = 0              # 视图/切片的起始偏移
+        self.data: list[float] = []       # 一维连续存储           [S01]
+        self.shape: tuple[int, ...] = ()  # 各维大小，如 (2, 3, 4) [S01]
+        self.strides: tuple[int, ...] = ()  # 各维步长，如 (12, 4, 1) [S02]
+        self.offset: int = 0              # 视图/切片起始偏移        [S11]
 
     # ================================================================
     # S01 — 存储与形状
