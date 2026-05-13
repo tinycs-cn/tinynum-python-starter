@@ -2,6 +2,9 @@
 
 内部使用连续的 list[float] 存储数据，配合 shape 和 strides 元数据，
 支持 reshape、transpose、slice 的零拷贝视图。
+
+关于 AI 辅助编程：欢迎用 AI 工具理解概念、解释报错、探索思路；
+但建议先独立思考再求助——直接让 AI 生成完整实现会让你错过真正的收获。
 """
 
 from __future__ import annotations
