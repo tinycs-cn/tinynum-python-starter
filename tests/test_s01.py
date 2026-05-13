@@ -65,6 +65,16 @@ def main() -> None:
     except (ValueError, Exception):
         emit("error_mismatch", "ERROR")
 
+    # --- 数据隔离：修改原始列表不影响 NDArray ---
+    raw_data = [1.0, 2.0, 3.0, 4.0]
+    isolated = NDArray.from_array(raw_data, 2, 2)
+    raw_data[0] = 99.0
+    emit("data_isolation", str(isolated))
+
+    # --- get_shape() 返回副本：tuple 本身不可变，修改无影响 ---
+    sq = NDArray.zeros(2, 3)
+    emit("shape_copy", "OK" if sq.get_shape()[0] == 2 else "FAIL")
+
 
 if __name__ == "__main__":
     main()
